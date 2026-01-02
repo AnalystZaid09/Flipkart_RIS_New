@@ -225,7 +225,7 @@ if not st.session_state.processed:
         1. **Upload Files**: Use the sidebar to upload three required Excel files:
            - Sales Report (with sheet name "Sales Report")
            - State FC Mapping
-           - Product Master (PM)
+           - Purchase Master (PM)
         
         2. **Process Data**: Click the "Process Data" button to analyze your data
         
@@ -236,12 +236,8 @@ if not st.session_state.processed:
            - State-wise analysis
            - Combined State-Brand analysis
         
-        4. **Download**: Use the download button on each tab to export data to Excel
-        
-        ### What is RIS?
-        RIS (Regional Inventory Storage) status indicates whether the product was shipped from 
-        a warehouse in the same state as the customer's delivery location.
-        """)
+        4. **Download**: Use the download button on each tab to export data to Excel"""
+        )
 
 else:
     # Create tabs
@@ -429,4 +425,5 @@ st.markdown("""
     <div style='text-align: center; color: gray; padding: 20px;'>
         RIS Analysis Dashboard | Built with Streamlit
     </div>
+
     """, unsafe_allow_html=True)
