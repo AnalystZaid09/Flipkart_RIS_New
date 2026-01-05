@@ -76,6 +76,10 @@ with st.sidebar:
                     Sales_Report = pd.read_excel(sales_file, sheet_name="Sales Report")
                     State_FC = pd.read_excel(state_fc_file)
                     PM = pd.read_excel(pm_file)
+
+                    # Remove rows where Event Type is Return
+                    if "Event Type" in Sales_Report.columns:
+                        Sales_Report = Sales_Report[~Sales_Report["Event Type"].astype(str).str.upper().str.contains("RETURN")]
                     
                     # Process State mapping
                     warehouse_to_state = (
@@ -427,3 +431,4 @@ st.markdown("""
     </div>
 
     """, unsafe_allow_html=True)
+
